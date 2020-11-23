@@ -6,17 +6,16 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
     return (
-        <Container className="contact">
+        <Container>
             <h1>Contact</h1>
         </Container>
     );
 };
 
 const Container = styled(motion.div)`
-    width: 50%;
-    height: 85vh;
+    width: 65%;
     margin: auto;
-    background: lightblue;
+    padding: 3rem 5rem;
 `;
 
 export default Contact;

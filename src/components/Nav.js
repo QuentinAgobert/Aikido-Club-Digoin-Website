@@ -41,7 +41,7 @@ function Nav() {
 }
 
 const StyledNav = styled(motion.nav)`
-    background: #515761;
+    background: #585e68;
     display: flex;
     align-items: center;
     justify-content: space-between;
