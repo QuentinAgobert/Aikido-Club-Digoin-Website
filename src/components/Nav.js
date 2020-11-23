@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // Styles
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -9,37 +9,39 @@ import { useLocation, Link } from "react-router-dom";
 
 function Nav() {
     const { pathname } = useLocation();
-    const [isHover, setIsHover] = useState(false);
     return (
-        <StyledNav>
-            <div className="nav-left">
-                <img className="nav-logo" src={Logo} alt="logo" />
-                <div className="nav-title">
-                    <h1><Link to="/">Aikido Club Digoinnais</Link></h1>
+        <>
+            <StyledNav>
+                <div className="nav-left">
+                    <img className="nav-logo" src={Logo} alt="logo" />
+                    <div className="nav-title">
+                        <h1><Link to="/">Aikido Club Digoinnais</Link></h1>
+                    </div>
                 </div>
-            </div>
-            <div className="nav-right">
-                <ul>
-                    <li>
-                        <Link onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} to="/">Accueil</Link>
-                        <Line transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === '/' ? "100%" : "0%" }} />
-                    </li>
-                    <li>
-                        <Link to="/info">Informations</Link>
-                        <Line transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === '/info' ? "100%" : "0%" }} />
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                        <Line transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === '/contact' ? "100%" : "0%" }} />
-                    </li>
-                </ul>
-            </div>
-        </StyledNav>
+                <div className="nav-right">
+                    <ul>
+                        <li>
+                            <Link to="/">Accueil</Link>
+                            <Line transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === '/' ? "100%" : "0%" }} />
+                        </li>
+                        <li>
+                            <Link to="/info">Informations</Link>
+                            <Line transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === '/info' ? "100%" : "0%" }} />
+                        </li>
+                        <li>
+                            <Link to="/contact">Contact</Link>
+                            <Line transition={{ duration: 0.75 }} initial={{ width: "0%" }} animate={{ width: pathname === '/contact' ? "100%" : "0%" }} />
+                        </li>
+                    </ul>
+                </div>
+            </StyledNav>
+            <BlueBar />
+        </>
     );
 }
 
 const StyledNav = styled(motion.nav)`
-    background: #424955;
+    background: #515761;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -54,15 +56,15 @@ const StyledNav = styled(motion.nav)`
             flex-direction: column;
             align-items: center;
             margin: auto;
-            font-size: 1rem;
+            font-size: 1.3rem;
             a {
                 color: white;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Lobster Two', sans-serif;
             }
         }
 
         img {
-            width: 34%;
+            width: 33%;
             clip-path: circle(50px at center);
         }
     }
@@ -91,6 +93,12 @@ const Line = styled(motion.div)`
     background: white;
     border-radius: 10px;
     width: 100%;
+`;
+
+const BlueBar = styled(motion.div)`
+    width: 100%;
+    height: 0.5rem;
+    background: rgb(32, 68, 121);
 `;
 
 export default Nav;

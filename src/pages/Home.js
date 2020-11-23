@@ -1,5 +1,7 @@
 import React from "react";
 // Components
+import Intro from "../components/Intro";
+import News from "../components/News";
 // Styles
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -7,16 +9,17 @@ import { motion } from "framer-motion";
 const Home = () => {
     return (
         <Container>
-            <h1>Accueil</h1>
+            <Intro />
+            <News />
         </Container>
     );
 };
 
 const Container = styled(motion.div)`
-    width: 50%;
-    height: 85vh;
+    width: 65%;
     margin: auto;
-    background: lightblue;
+    padding: 3rem 5rem;
+    
 `;
 
 export default Home;
