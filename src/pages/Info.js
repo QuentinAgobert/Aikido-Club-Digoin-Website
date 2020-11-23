@@ -4,10 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Home = () => {
+const Info = () => {
     return (
         <Container>
-            <h1>Accueil</h1>
+            <h1>Informations</h1>
         </Container>
     );
 };
@@ -19,4 +19,4 @@ const Container = styled(motion.div)`
     background: lightblue;
 `;
 
-export default Home;
+export default Info;
