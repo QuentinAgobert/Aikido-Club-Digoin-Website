@@ -3,10 +3,12 @@ import React from "react";
 // Styles
 import styled from "styled-components";
 import { motion } from "framer-motion";
+// Animations
+import { pageAnimation } from "../animation";
 
 const Contact = () => {
     return (
-        <Container>
+        <Container variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <h1>Contact</h1>
         </Container>
     );

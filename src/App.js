@@ -9,6 +9,8 @@ import Nav from "./components/Nav";
 import GlobalStyles from "./components/GlobalStyles";
 // Router
 import { useLocation, Switch, Route } from "react-router-dom";
+// Animation
+import { AnimatePresence } from "framer-motion";
 
 function App() {
     const location = useLocation();
@@ -16,17 +18,19 @@ function App() {
         <div className="App">
             <GlobalStyles />
             <Nav />
-            <Switch location={location} key={location.pathname}>
-                <Route path="/" exact>
-                    <Home />
-                </Route>
-                <Route path="/info" exact>
-                    <Info />
-                </Route>
-                <Route path="/contact" exact>
-                    <Contact />
-                </Route>
-            </Switch>
+            <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                    <Route path="/" exact>
+                        <Home />
+                    </Route>
+                    <Route path="/info">
+                        <Info />
+                    </Route>
+                    <Route path="/contact" exact>
+                        <Contact />
+                    </Route>
+                </Switch>
+            </AnimatePresence>
         </div>
     );
 }
