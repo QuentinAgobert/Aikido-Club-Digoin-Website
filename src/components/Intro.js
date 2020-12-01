@@ -7,7 +7,7 @@ const Intro = () => {
     return (
         <StyledIntro>
             <h3>On paie mal un maître en ne restant toujours que l'élève...</h3>
-            <h2>Le site web de l'Aikido Club de Digoin a fait peau neuve ! Mais le contenu reste le même. 
+            <h2>Le site web de l'Aïkido Club de Digoin a fait peau neuve ! Mais le contenu reste le même. 
                 N'hésitez pas à nous contacter si vous avez envie d'essayer cet Art Martial !
             </h2>
         </StyledIntro>

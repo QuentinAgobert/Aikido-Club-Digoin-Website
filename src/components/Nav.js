@@ -12,33 +12,31 @@ import { lineAnimation } from "../animation";
 function Nav() {
     const { pathname } = useLocation();
     return (
-        <>
-            <StyledNav>
-                <div className="nav-left">
-                    <img className="nav-logo" src={Logo} alt="logo" />
-                    <div className="nav-title">
-                        <h1><Link to="/">Aikido Club Digoinnais</Link></h1>
-                    </div>
+        <StyledNav>
+            <div className="nav-left">
+                <img className="nav-logo" src={Logo} alt="logo" />
+                <div className="nav-title">
+                    <h1><Link to="/">Aïkido Club Digoinnais</Link></h1>
                 </div>
-                <motion.div className="nav-right">
-                    <motion.ul>
-                        <motion.li>
-                            <Link to="/">Accueil</Link>
-                            <Line variants={lineAnimation} initial="hidden" animate={ pathname === '/' ? "show" : "exit" } />
-                        </motion.li>
-                        <motion.li>
-                            <Link to="/info/aikido">Informations</Link>
-                            <Line variants={lineAnimation} initial="hidden" animate={ pathname.indexOf("/info") >= 0 ? "show" : "exit" } />
-                        </motion.li>
-                        <motion.li>
-                            <Link to="/contact">Contact</Link>
-                            <Line variants={lineAnimation} initial="hidden" animate={ pathname === '/contact' ? "show" : "exit" } />
-                        </motion.li>
-                    </motion.ul>
-                </motion.div>
-            </StyledNav>
-            <BlueBar />
-        </>
+            </div>
+            <motion.div className="nav-right">
+                <motion.ul>
+                    <motion.li>
+                        <Link to="/">Accueil</Link>
+                        <Line variants={lineAnimation} initial="hidden" animate={ pathname === '/' ? "show" : "exit" } />
+                    </motion.li>
+                    <motion.li>
+                        <Link to="/info">Informations</Link>
+                        {/* <Line variants={lineAnimation} initial="hidden" animate={ pathname === '/info' ? "show" : "exit" } /> */}
+                        <Line variants={lineAnimation} initial="hidden" animate={ pathname.indexOf("/info") >= 0 ? "show" : "exit" } />
+                    </motion.li>
+                    <motion.li>
+                        <Link to="/contact">Contact</Link>
+                        <Line variants={lineAnimation} initial="hidden" animate={ pathname === '/contact' ? "show" : "exit" } />
+                    </motion.li>
+                </motion.ul>
+            </motion.div>
+        </StyledNav>
     );
 }
 
@@ -95,10 +93,5 @@ const Line = styled(motion.div)`
     background: #E4F0FF;
 `;
 
-const BlueBar = styled(motion.div)`
-    width: 100%;
-    height: 0.5rem;
-    background: rgb(32, 68, 121);
-`;
 
 export default Nav;

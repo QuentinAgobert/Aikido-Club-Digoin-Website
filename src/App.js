@@ -6,20 +6,21 @@ import Contact from "./pages/Contact";
 // Components
 import Nav from "./components/Nav";
 // Styles
+import styled from "styled-components";
 import GlobalStyles from "./components/GlobalStyles";
 // Router
-import { useLocation, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // Animation
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-    const location = useLocation();
     return (
-        <div className="App">
+        <StyledApp>
             <GlobalStyles />
             <Nav />
+            <BlueBar />
             <AnimatePresence exitBeforeEnter>
-                <Switch location={location} key={location.pathname}>
+                <Switch>
                     <Route path="/" exact>
                         <Home />
                     </Route>
@@ -31,8 +32,18 @@ function App() {
                     </Route>
                 </Switch>
             </AnimatePresence>
-        </div>
+        </StyledApp>
     );
 }
+
+const StyledApp = styled.div`
+
+`;
+
+const BlueBar = styled.div`
+    width: 100%;
+    height: 0.5rem;
+    background: rgb(32, 68, 121);
+`;
 
 export default App;

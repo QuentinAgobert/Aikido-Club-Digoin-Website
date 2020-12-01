@@ -11,42 +11,48 @@ import Liens from "../components/Liens";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 // Router
-import { useLocation, Switch, Route } from "react-router-dom";
+import { Route, useRouteMatch } from "react-router-dom";
 // Animation
 import { pageAnimation, navAnimation } from "../animation";
+import { AnimatePresence } from "framer-motion";
 
 const Info = () => {
-    const location = useLocation();
+    const { path } = useRouteMatch();
     return (
-        <Container variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+        <StyledInfo>
             <InfoNav />
-            <Switch location={location} key={location.pathname}>
-                <Route path="/info/aikido" exact>
-                    <Aikido />
-                </Route>
-                <Route path="/info/osensei" exact>
-                    <Osensei />
-                </Route>
-                <Route path="/info/enseignant" exact>
-                    <Enseignant />
-                </Route>
-                <Route path="/info/equipement" exact>
-                    <Equipement />
-                </Route>
-                <Route path="/info/dojo" exact>
+            <InfoContainer>
+                <Route path={`${path}/dojo`}>
                     <Dojo />
                 </Route>
-                <Route path="/info/liens" exact>
+                <Route path={`${path}/aikido`}>
+                    <Aikido />
+                </Route>
+                <Route path={`${path}/osensei`}t>
+                    <Osensei />
+                </Route>
+                <Route path={`${path}/enseignant`}>
+                    <Enseignant />
+                </Route>
+                <Route path={`${path}/equipement`}>
+                    <Equipement />
+                </Route>
+                <Route path={`${path}/liens`}>
                     <Liens />
                 </Route>
-            </Switch>
-        </Container>
+            </InfoContainer>
+        </StyledInfo>
     );
 };
 
-const Container = styled(motion.div)`
-    width: 65%;
-    margin: auto;
+const StyledInfo = styled(motion.div)`
+    display: flex;
+    flex-direction: row;
+    background: lightgreen;
+`;
+
+const InfoContainer = styled(motion.div)`
+    width: 52.5%;
     display: flex;
     background: lightblue;
 `;

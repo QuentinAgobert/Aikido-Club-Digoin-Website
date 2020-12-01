@@ -10,14 +10,14 @@ import { pageAnimation } from "../animation";
 
 const Home = () => {
     return (
-        <Container variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+        <StyledHome variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <Intro />
             <News />
-        </Container>
+        </StyledHome>
     );
 };
 
-const Container = styled(motion.div)`
+const StyledHome = styled(motion.div)`
     width: 65%;
     margin: auto;
     padding: 3rem 5rem;

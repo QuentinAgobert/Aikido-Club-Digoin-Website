@@ -39,7 +39,7 @@ export const pageAnimation = {
     },
 };
 
-export const navAnimation = {
+export const navListAnim = {
     hidden: {
         x: -200,
         opacity: 0,
@@ -56,5 +56,25 @@ export const navAnimation = {
         transition: {
             duration: 0.75,
         },
+    },
+};
+
+export const navItemAnim = {
+    hidden: {
+        x: 0,
+        opacity: 0.5,
+        fontWeight: 'medium',
+    },
+    show: {
+        x: 50,
+        opacity: 1,
+        fontWeight: 'bold',
+        transition: {
+            duration: 0.5,
+        },
+    },
+    exit: {
+        opacity: 0.5,
+        fontWeight: 'medium',
     },
 };

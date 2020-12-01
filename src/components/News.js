@@ -10,13 +10,13 @@ const News = () => {
         <StyledNews>
             <h1>Actualités</h1>
             <div className="actu-covid">
-                <p>Le club d'Aikido de Digoin est actuellement fermé à cause de la crise sanitaire actuelle.
+                <p>Le club d'Aïkido de Digoin est actuellement fermé à cause de la crise sanitaire actuelle.
                     Nous attendons tous des jours meilleurs pour reprendre la pratique. En attendant, prenez soin de vous.
                 </p>
             </div>
             <div className="actu-mutokukai">
                 <h3>29/07/2020</h3>
-                <p>Le club d'Aikido de Digoin a quitté la FFAB puis suivre l'enseignement de Stéphane Benedetti Shihan au sein du Mutokukai France.</p>
+                <p>Le club d'Aïkido de Digoin a quitté la FFAB puis suivre l'enseignement de Stéphane Benedetti Shihan au sein du Mutokukai France.</p>
                 <div className="mutokukai">
                     <a target="_blank" href="https://www.mutokukai.fr/"><img src={LogoMutoku} alt="mutokukai"/></a>
                 </div>
